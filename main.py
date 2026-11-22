@@ -8,7 +8,6 @@
 """
 
 
-
 from squadron_ui.ui import App
 
 if __name__ == "__main__":

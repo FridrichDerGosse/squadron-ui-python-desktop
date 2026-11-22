@@ -10,6 +10,7 @@
 from __future__ import annotations
 
 import typing as tp
+
 from customtkinter import CTk
 
 if tp.TYPE_CHECKING:
@@ -18,7 +19,7 @@ if tp.TYPE_CHECKING:
 
 class App(CTk):
     """
-    Invisible root application window
+    Invisible root application window.
     """
 
     def __init__(self) -> None:
