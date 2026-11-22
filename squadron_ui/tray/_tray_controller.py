@@ -1,5 +1,5 @@
 """
-Defines a cross-platform pystray wrapper
+Defines a cross-platform pystray wrapper.
 
 Supports left-click, right-click, and debounced hover.
 
@@ -13,11 +13,13 @@ from __future__ import annotations
 
 import typing as tp
 
-from PIL import Image
+if tp.TYPE_CHECKING:
+    from PIL import Image
+
 
 class TrayController:
     """
-    Cross-platform pystray wrapper
+    Cross-platform pystray wrapper.
     """
 
     __slots__ = (
