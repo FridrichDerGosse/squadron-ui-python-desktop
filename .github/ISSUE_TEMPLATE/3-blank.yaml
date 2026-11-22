@@ -1,0 +1,10 @@
+name: Blank issue
+description: Create a new issue from scratch
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue
+      placeholder: Type your description here
+    validations:
+      required: true
