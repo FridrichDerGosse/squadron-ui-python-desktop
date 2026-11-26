@@ -7,21 +7,34 @@
 | ``Authors``: LukasKrah
 """
 
-from __future__ import annotations
-
 import typing as tp
 
-from customtkinter import CTk
+from ._windows import TrayWindow
 
 if tp.TYPE_CHECKING:
     ...
 
 
-class App(CTk):
+class App:
     """
-    Invisible root application window.
+    Application manager
     """
+    __slots__ = (
+        "__tray_window",
+        "__tray_window_visible"
+    )
+
+    __tray_window: TrayWindow | None
+    __tray_window_visible: bool
 
     def __init__(self) -> None:
-        super().__init__()
-        self.withdraw()
+        self.__tray_window = None
+        self.__tray_window_visible = False
+    
+    def show_tray_window(self) -> None:
+        self.__tray_window = TrayWindow()
+        self.__tray_window_visible = True
+
+        self.__tray_window.mainloop()
+
+

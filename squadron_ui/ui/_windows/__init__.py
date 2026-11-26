@@ -6,3 +6,6 @@
 | ``Created``: 22.11.2026
 | ``Authors``: LukasKrah
 """
+
+
+from ._tray_window import TrayWindow

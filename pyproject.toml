@@ -9,7 +9,7 @@ authors = [
 license = "GPL-3.0"
 license-files = ["LICENSE"]
 readme = {file = "README.md", content-type = "text/markdown"}
-requires-python = "==3.14"
+requires-python = "==3.15"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Environment :: Win32 (MS Windows)",
@@ -20,7 +20,7 @@ classifiers = [
     "Operating System :: Microsoft :: Windows :: Windows 10",
     "Operating System :: Microsoft :: Windows :: Windows 11",
     "Programming Language :: C++",
-    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
 ]
 
 [project.urls]
@@ -56,13 +56,16 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
+    ".idea",
+    ".github",
+    ".ruff_cache"
 ]
 
 # Same as Black.
 line-length = 88
 indent-width = 4
 
-target-version = "py314"
+target-version = "py315"
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -138,7 +141,7 @@ strict = true
 [tool.isort]
 # https://isort.readthedocs.io/en/latest/configuration/options.html
 multi_line_output = 9
-py_version = 312
+py_version = 315
 order_by_type = false
 use_parentheses = true
 ensure_newline_before_comments = true

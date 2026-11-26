@@ -7,10 +7,10 @@
 | ``Authors``: LukasKrah
 """
 
-
 from squadron_ui.ui import App
 
 if __name__ == "__main__":
-    app_ui: App = App()
+    app_ui = App()
 
-    app_ui.mainloop()
+    app_ui.show_tray_window()
+

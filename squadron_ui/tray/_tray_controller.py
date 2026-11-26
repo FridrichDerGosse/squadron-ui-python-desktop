@@ -22,10 +22,7 @@ class TrayController:
     Cross-platform pystray wrapper.
     """
 
-    __slots__ = (
-        "__name",
-        "__title"
-    )
+    __slots__ = ("__name", "__title")
 
     # region InstanceVars
     __name: str
@@ -42,4 +39,8 @@ class TrayController:
     __hover_state: ...
     __hover_enter_timestamp: ...
     __hover_leave_timestamp: ...
+
     # endregion
+
+    def __init__(self) -> None:
+        ...
