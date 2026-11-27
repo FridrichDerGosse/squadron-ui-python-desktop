@@ -11,6 +11,8 @@ from ._exceptions import (
     SquadronApiUserAlreadyRegisteredError,
     SquadronApiUserNotFoundError,
     SquadronApiInvalidTokenError,
-    SquadronApiUnhasablePasswordError,
+    SquadronApiUnhashablePasswordError,
     SquadronApiInvalidCredentialsError,
 )
+
+from ._api_client import ApiClient

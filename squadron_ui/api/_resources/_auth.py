@@ -11,20 +11,36 @@ import typing as tp
 from ._base_resource import BaseResource
 
 from .._constants import ApiPostPaths
+from .._models import RegisterResponse, LoginResponse
+
 
 if tp.TYPE_CHECKING:
-    from .._models import ApiTokenType
+    from httpx import Response
 
 
 class AuthResource(BaseResource):
     """Auth resource."""
 
-    def login(self, username: str, password: str) -> ApiTokenType:
-        self._api_client.post(ApiPostPaths.LOGIN)
+    async def login(self, username: str, password: str) -> LoginResponse:
+        response: Response = await self._api_client.post(
+            ApiPostPaths.LOGIN,
+            data={"username": username, "password": password},
+        )
 
-        return ""
+        validated_response: LoginResponse = LoginResponse.model_validate(
+            response.json()
+        )
 
-    def register(self, username: str, password: str) -> None:
-        self._api_client.post(ApiPostPaths.LOGIN)
+        return validated_response
 
-    def logout(self) -> None: ...
+    async def register(self, username: str, password: str) -> RegisterResponse:
+        response: Response = await self._api_client.post(
+            ApiPostPaths.REGISTER,
+            data={"username": username, "password": password},
+        )
+
+        validated_response: RegisterResponse = RegisterResponse.model_validate(
+            response.json()
+        )
+
+        return validated_response
